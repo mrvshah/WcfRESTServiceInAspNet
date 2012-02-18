@@ -19,7 +19,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    My ASP.NET Application
+                    Wcf REST service in ASP.NET application
                 </h1>
             </div>
             <div class="clear hideSkiplink">

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel.Activation;
-using System.Web;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 using WebServices;
 
 namespace WebApp
@@ -16,7 +11,8 @@ namespace WebApp
 		void Application_Start(object sender, EventArgs e)
 		{
 			// Code that runs on application startup
-			RegisterRoutes();
+			var factory = new WebServiceHostFactory();
+			RouteTable.Routes.Add(new ServiceRoute("WebServices/ProductService", factory, typeof(ProductService)));
 		}
 
 		void Application_End(object sender, EventArgs e)
@@ -44,12 +40,6 @@ namespace WebApp
 			// is set to InProc in the Web.config file. If session mode is set to StateServer 
 			// or SQLServer, the event is not raised.
 
-		}
-
-		private void RegisterRoutes()
-		{
-			var factory = new WebServiceHostFactory();
-			RouteTable.Routes.Add(new ServiceRoute("WebServices/ProductService", factory, typeof(ProductService)));
 		}
 	}
 }

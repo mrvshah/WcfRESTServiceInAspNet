@@ -11,7 +11,6 @@
       contentType: "application/json; charset=utf-8",
       dataType: "json",
       url: "/WebServices/ProductService/GetProducts/" + "Books",
-      //data: "/Books",
       async: false,
       error: function (msg) {
          console.log(msg);

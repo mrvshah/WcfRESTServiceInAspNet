@@ -7,6 +7,7 @@
       <div data-bind="template: {name:'productTemplate', foreach:filteredProducts}"></div>
       <script type="text/html" id="productTemplate">
          <div>
+            <div style="float: left;padding-right: 10px">${Id}</div>
             <div style="float: left;padding-right: 10px">${Name}</div>
             <div style="float: left;padding-right: 10px">${SubCategoryName}</div>
             <div style="float: none;">${Price}</div>
